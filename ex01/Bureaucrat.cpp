@@ -71,7 +71,16 @@ void Bureaucrat::demote( void ){
 
 int Bureaucrat::getGrade( void ) const { return _grade;};
 
+/*
+Ajoutez également une fonction signForm à Bureaucrat. Si la signature est réussie,
+elle imprimera quelque chose comme "<bureaucrat> signs <form>",
+sinon elle imprimera quelque chose comme "<bureaucrat> cannot sign because <raison>".
+*/
 std::string Bureaucrat::getName( void ) const { return _name;};
+void Bureaucrat::signForm(Form & formToSign){
+
+	formToSign.beSigned(this);
+};
 
 std::ostream	&operator<< ( std::ostream & out, const Bureaucrat & rhs ){
 

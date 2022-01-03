@@ -1,8 +1,11 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
+#include "Form.h"
 #include <string>
 #include <exception>
 #define IS_BUREAUCRAT_TROUFFION 150
+
+class Form;
 
 class Bureaucrat {
 
@@ -16,6 +19,7 @@ class Bureaucrat {
     	void demote( void ); // add 1 from grade
 		int getGrade( void ) const;
 		std::string getName( void ) const;
+		void signForm(Form & formToSign);
 		Bureaucrat	&operator= ( Bureaucrat const & rhs );
 		class GradeTooHighException : public std::exception {
 			public:
