@@ -22,7 +22,7 @@ class Form {
 		bool getIsSigned(void) const;
 		int	getRequiredGradeToSign(void) const;
 		int getRequiredGradeToExecute(void) const;
-		Form &beSigned(Bureaucrat const &bureaucrat);
+		virtual Form &beSigned(Bureaucrat const &bureaucrat) = 0;
 		Form( Form const & src );
 		class GradeTooHighException : public std::exception {
 			public:
