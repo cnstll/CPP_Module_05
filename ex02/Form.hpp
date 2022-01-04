@@ -17,18 +17,25 @@ class Form {
 		Form(std::string const  name="A48",
 				int const RequiredGradeToSign=IS_BUREAUCRAT_STONKS,
 				int const RequiredGradeToExecute=IS_BUREAUCRAT_STONKS);
-		~Form( void );
+		Form( Form const & src );
+		virtual ~Form( void );
 		std::string getName(void) const;
 		bool getIsSigned(void) const;
 		int	getRequiredGradeToSign(void) const;
 		int getRequiredGradeToExecute(void) const;
-		virtual Form &beSigned(Bureaucrat const &bureaucrat) = 0;
-		Form( Form const & src );
+		Form &beSigned(Bureaucrat const &bureaucrat);
+
+		void checkBeforeExecute(Bureaucrat const & executor);
+		virtual void execute(Bureaucrat const & executor) = 0;
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
+			public:
+				const char* what() const throw();
+		};
+		class FormNotSignedException : public std::exception {
 			public:
 				const char* what() const throw();
 		};

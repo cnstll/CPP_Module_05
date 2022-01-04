@@ -47,6 +47,14 @@ Form &Form::beSigned(Bureaucrat const &bureaucrat){
 	return *this;
 };
 
+void Form::checkBeforeExecute(Bureaucrat const & executor)
+{
+		if (this->getIsSigned() == false) 
+			throw Form::FormNotSignedException();
+		if (executor.getGrade() > this->getRequiredGradeToExecute()) 
+			throw Form::GradeTooLowException();
+}
+
 Form	&Form::operator= ( Form const & rhs ){
 
 	rhs.getName();
@@ -59,6 +67,10 @@ const char* Form::GradeTooHighException::what() const throw(){
 
 const char* Form::GradeTooLowException::what() const throw(){
 	return ("Grade too low to sign or execute the contract!");
+};
+
+const char* Form::FormNotSignedException::what() const throw(){
+	return ("Form not signed before execution");
 };
 
 std::ostream &operator<<(std::ostream &out, const Form &rhs){

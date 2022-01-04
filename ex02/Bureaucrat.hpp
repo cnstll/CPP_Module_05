@@ -1,6 +1,6 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
-#include "Form.h"
+#include "Form.hpp"
 #include <string>
 #include <exception>
 #define IS_BUREAUCRAT_TROUFFION 150
