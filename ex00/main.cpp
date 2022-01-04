@@ -1,10 +1,6 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 
-
-//    std::cout << Harry.getName() << ", bureaucrat grade ";
-//    std::cout << Harry.getGrade() << std::endl;
-
 int main(void)
 {
     //Trying to construct a class with a grade too low

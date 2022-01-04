@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : 
@@ -71,15 +72,21 @@ void Bureaucrat::demote( void ){
 
 int Bureaucrat::getGrade( void ) const { return _grade;};
 
-/*
-Ajoutez également une fonction signForm à Bureaucrat. Si la signature est réussie,
-elle imprimera quelque chose comme "<bureaucrat> signs <form>",
-sinon elle imprimera quelque chose comme "<bureaucrat> cannot sign because <raison>".
-*/
 std::string Bureaucrat::getName( void ) const { return _name;};
-void Bureaucrat::signForm(Form & formToSign){
 
-	formToSign.beSigned(this);
+void Bureaucrat::signForm(Form &formToSign){
+
+	try {
+		formToSign.beSigned(*this);
+		std::cout << this->getName() << " successfully signed form ";
+		std::cout << formToSign.getName() << "\n";
+	}
+	catch(std::exception &e){
+
+		std::cerr << this->getName() << " cannot sign form " ;
+		std::cerr << formToSign.getName() << " because ";
+		std::cerr << e.what() << "\n";
+	}
 };
 
 std::ostream	&operator<< ( std::ostream & out, const Bureaucrat & rhs ){

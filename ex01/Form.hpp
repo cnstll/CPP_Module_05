@@ -15,6 +15,8 @@ Ajoutez également une fonction signForm à Bureaucrat. Si la signature est réu
 elle imprimera quelque chose comme "<bureaucrat> signs <form>", sinon elle imprimera quelque chose comme "<bureaucrat> cannot sign because <raison>".
 Ajoutez tout ce qui est nécessaire pour tester ceci à votre main.
 */
+class Bureaucrat ;
+
 class Form {
 
 	public:
@@ -27,7 +29,8 @@ class Form {
 		bool getIsSigned(void) const;
 		int	getRequiredGradeToSign(void) const;
 		int getRequiredGradeToExecute(void) const;
-		Form beSigned(Bureaucrat const &bureaucrat);
+		Form &beSigned(Bureaucrat const &bureaucrat);
+		Form( Form const & src );
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
@@ -42,8 +45,7 @@ class Form {
 		bool _isSigned;
 		int	const _requiredGradeToSign;
 		int const _requiredGradeToExecute;
-		Form( Form const & src );
 		Form	&operator= ( Form const & rhs );
 };
-std::ostream &operator<<(std::ostream out, Form &rhs);
+std::ostream &operator<<(std::ostream &out, const Form &rhs);
 #endif
