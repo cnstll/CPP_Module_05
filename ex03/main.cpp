@@ -1,9 +1,11 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include <iostream>
+#include <exception>
 
 void printSectionTitle(std::string title){
 
@@ -101,58 +103,86 @@ int main(void)
         
     }
     {
-        printSectionTitle("EX02");
+    //    printSectionTitle("EX02");
+    //    Bureaucrat Harry("Harry", 25);
+    //    Bureaucrat Jane("Jane", 1);
+    //    Bureaucrat Bob("Bob", 150);
+    //    ShrubberyCreationForm formS32("street");
+    //    PresidentialPardonForm formP32("Arthur Dent");
+    //    RobotomyRequestForm formR32("The Poor Bob");
+    //    printSectionTitle("Shrubbery Form");
+    //    std::cout << "Form " << formS32.getName() << " features:\n";
+    //    std::cout << formS32;
+    //    std::cout << std::endl;
+    //    std::cout << "Jane is trying to execute the form " << formS32.getName() << "...\n";
+    //    formS32.execute(Jane);
+    //    std::cout << std::endl;
+    //    std::cout << "Harry signs a form" << formS32.getName() << "...\n";
+    //    formS32.beSigned(Harry);
+    //    std::cout << std::endl;
+    //    std::cout << "Bob is trying to execute a form " << formS32.getName() << "...\n";
+    //    formS32.execute(Bob);
+    //    std::cout << std::endl;
+    //    std::cout << "Jane is trying to execute a form " << formS32.getName() << "...\n";
+    //    Jane.executeForm(formS32);
+    //    std::cout << "Nice shrubberies are now growing in the " << formS32.getTarget() << " (target)\n";    
+    //    printSectionTitle("Presidential Pardon Form");
+    //    std::cout << "Form " << formP32.getName() << " features:\n";
+    //    std::cout << formP32;
+    //    std::cout << std::endl;
+    //    std::cout << "Bob is trying to execute a form " << formP32.getName() << "...\n";
+    //    formP32.execute(Bob);
+    //    std::cout << "Harry is trying to sign the form " << formP32.getName() << "...\n";
+    //    Harry.signForm(formP32);
+    //    std::cout << "Harry is trying to execute a form " << formP32.getName() << "...\n";
+    //    formP32.execute(Harry);
+    //    std::cout << "Jane is trying to execute a form" << formP32.getName() << "...\n";
+    //    formP32.execute(Jane);
+    //    std::cout << std::endl;
+    //    std::cout << "Jane is trying to execute a form " << formP32.getName() << "...\n";
+    //    Jane.executeForm(formP32);
+    //    printSectionTitle("Robotomization Request Form");
+    //    std::cout << "Form " << formR32.getName() << " features:\n";
+    //    std::cout << formR32;
+    //    std::cout << std::endl;
+    //    std::cout << "Bob is trying to execute a form " << formR32.getName() << "...\n";
+    //    formR32.execute(Bob);
+    //    std::cout << "Harry is trying to sign the form " << formR32.getName() << "...\n";
+    //    Harry.signForm(formR32);
+    //    std::cout << std::endl;
+    //    std::cout << "Harry is trying to execute a form " << formP32.getName() << "...\n";
+    //    formR32.execute(Harry);
+    //    std::cout << std::endl;
+    //    std::cout << "Jane is trying to execute a form " << formP32.getName() << "...\n";
+    //    Jane.executeForm(formR32);
+    //    printSectionTitle("Cleaning");
+    }
+    {
+
+        printSectionTitle("EX03");
         Bureaucrat Harry("Harry", 25);
         Bureaucrat Jane("Jane", 1);
         Bureaucrat Bob("Bob", 150);
-        ShrubberyCreationForm formS32("street");
-        PresidentialPardonForm formP32("Arthur Dent");
-        RobotomyRequestForm formR32("The Poor Bob");
-        printSectionTitle("Shrubbery Form");
-        std::cout << "Form " << formS32.getName() << " features:\n";
-        std::cout << formS32;
+        Intern Kevin;
+        printSectionTitle("Intern MakeForm");
+        Form *formS32 = Kevin.makeForm("shrubbery creation", "mayor garden"); 
+        std::cout << *formS32;
         std::cout << std::endl;
-        std::cout << "Jane is trying to execute the form " << formS32.getName() << "...\n";
-        formS32.execute(Jane);
+        Form *formP32 = Kevin.makeForm("robotomy request", "The Poor Bob");
+        std::cout << *formP32;
         std::cout << std::endl;
-        std::cout << "Harry signs a form" << formS32.getName() << "...\n";
-        formS32.beSigned(Harry);
+        Form *formR32 = Kevin.makeForm("presidential pardon", "Arthur Dent");
+        std::cout << *formR32;
         std::cout << std::endl;
-        std::cout << "Bob is trying to execute a form " << formS32.getName() << "...\n";
-        formS32.execute(Bob);
-        std::cout << std::endl;
-        std::cout << "Jane is trying to execute a form " << formS32.getName() << "...\n";
-        Jane.executeForm(formS32);
-        std::cout << "Nice shrubberies are now growing in the " << formS32.getTarget() << " (target)\n";    
-        printSectionTitle("Presidential Pardon Form");
-        std::cout << "Form " << formP32.getName() << " features:\n";
-        std::cout << formP32;
-        std::cout << std::endl;
-        std::cout << "Bob is trying to execute a form " << formP32.getName() << "...\n";
-        formP32.execute(Bob);
-        std::cout << "Harry is trying to sign the form " << formP32.getName() << "...\n";
-        Harry.signForm(formP32);
-        std::cout << "Harry is trying to execute a form " << formP32.getName() << "...\n";
-        formP32.execute(Harry);
-        std::cout << "Jane is trying to execute a form" << formP32.getName() << "...\n";
-        formP32.execute(Jane);
-        std::cout << std::endl;
-        std::cout << "Jane is trying to execute a form " << formP32.getName() << "...\n";
-        Jane.executeForm(formP32);
-        printSectionTitle("Robotomization Request Form");
-        std::cout << "Form " << formR32.getName() << " features:\n";
-        std::cout << formR32;
-        std::cout << std::endl;
-        std::cout << "Bob is trying to execute a form " << formR32.getName() << "...\n";
-        formR32.execute(Bob);
-        std::cout << "Harry is trying to sign the form " << formR32.getName() << "...\n";
-        Harry.signForm(formR32);
-        std::cout << std::endl;
-        std::cout << "Harry is trying to execute a form " << formP32.getName() << "...\n";
-        formR32.execute(Harry);
-        std::cout << std::endl;
-        std::cout << "Jane is trying to execute a form " << formP32.getName() << "...\n";
-        Jane.executeForm(formR32);
+        try {
+
+            Form *formDoNotExist = Kevin.makeForm("salary for intern", "intern");
+            std::cout << *formDoNotExist;
+        }
+        catch (std::exception &e)
+        {
+            std::cerr << "Exception: " << e.what() << std::endl;
+        }
         printSectionTitle("Cleaning");
     }
     return 0;

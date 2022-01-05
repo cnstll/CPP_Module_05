@@ -5,7 +5,7 @@
 #include <iostream>
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string const target ) :
-	Form("Shrubbery Creation", 145, 137), _target(target)
+	Form("shrubbery creation", 145, 137), _target(target)
 {
 
 	std::cout << "ShrubberyCreationForm - Default constructor called\n";
@@ -66,7 +66,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void ){
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator= ( ShrubberyCreationForm const & rhs ){
 
-	rhs.getTarget();
+	(void)rhs;
 	return *this;
 };
-

@@ -3,7 +3,7 @@
 #include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm( std::string const target ) :
-Form("Robotomy Request", 72, 45), _target(target)
+Form("robotomy request", 72, 45), _target(target)
 {
 
 	std::cout << "RobotomyRequestForm - Default constructor called\n";
@@ -48,7 +48,7 @@ RobotomyRequestForm::~RobotomyRequestForm( void ){
 
 RobotomyRequestForm	&RobotomyRequestForm::operator= ( RobotomyRequestForm const & rhs ){
 
-	rhs.getTarget();
+	(void)rhs;
 	return *this;
 };
 

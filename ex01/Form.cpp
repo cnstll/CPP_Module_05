@@ -49,7 +49,7 @@ Form &Form::beSigned(Bureaucrat const &bureaucrat){
 
 Form	&Form::operator= ( Form const & rhs ){
 
-	rhs.getName();
+	(void)rhs;	
 	return *this;
 };
 

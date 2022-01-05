@@ -16,7 +16,6 @@ class Bureaucrat {
     	void demote( void ); // add 1 from grade
 		int getGrade( void ) const;
 		std::string getName( void ) const;
-		Bureaucrat	&operator= ( Bureaucrat const & rhs );
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
@@ -28,6 +27,7 @@ class Bureaucrat {
 	private:
 		std::string const _name;
 		int _grade;
+		Bureaucrat	&operator= ( Bureaucrat const & rhs );
 
 };
 

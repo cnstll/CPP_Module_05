@@ -42,7 +42,7 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 
 PresidentialPardonForm	&PresidentialPardonForm::operator= ( PresidentialPardonForm const & rhs ){
 
-	rhs.getTarget();
+	(void)rhs;
 	return *this;
 };
 

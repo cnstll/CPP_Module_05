@@ -28,7 +28,7 @@ Bureaucrat::~Bureaucrat( void ){
 
 Bureaucrat	&Bureaucrat::operator= ( Bureaucrat const & rhs ){
 
-	this->_grade = rhs.getGrade();
+	(void)rhs;
 	return *this;
 };
 

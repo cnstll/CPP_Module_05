@@ -48,7 +48,7 @@ RobotomyRequestForm::~RobotomyRequestForm( void ){
 
 RobotomyRequestForm	&RobotomyRequestForm::operator= ( RobotomyRequestForm const & rhs ){
 
-	rhs.getTarget();
+	(void)rhs;
 	return *this;
 };
 

@@ -56,7 +56,7 @@ void Form::checkBeforeExecute(Bureaucrat const & executor) const {
 
 Form	&Form::operator= ( Form const & rhs ){
 
-	rhs.getName();
+	(void)rhs;
 	return *this;
 };
 

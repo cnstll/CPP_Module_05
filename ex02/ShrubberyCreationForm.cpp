@@ -66,7 +66,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void ){
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator= ( ShrubberyCreationForm const & rhs ){
 
-	rhs.getTarget();
+	(void)rhs;
 	return *this;
 };
 

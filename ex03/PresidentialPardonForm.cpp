@@ -3,7 +3,7 @@
 #include <iostream>
 
 PresidentialPardonForm::PresidentialPardonForm( std::string const target ) :
-Form("Presidential Pardon", 25, 5), _target(target)
+Form("presidential pardon", 25, 5), _target(target)
 {
 
 	std::cout << "PresidentialPardonForm - Default constructor called\n";
@@ -42,7 +42,7 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 
 PresidentialPardonForm	&PresidentialPardonForm::operator= ( PresidentialPardonForm const & rhs ){
 
-	rhs.getTarget();
+	(void)rhs;
 	return *this;
 };
 
