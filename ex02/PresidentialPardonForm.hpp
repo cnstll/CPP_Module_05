@@ -6,16 +6,15 @@ class PresidentialPardonForm : public Form {
 
 	public:
 
-		PresidentialPardonForm( void );
+		PresidentialPardonForm( std::string const target="Arthur Dent");
 		PresidentialPardonForm( PresidentialPardonForm const & src );
-		~PresidentialPardonForm( void );
+		virtual ~PresidentialPardonForm( void );
 
-		PresidentialPardonForm	&operator= ( PresidentialPardonForm const & rhs );
+		std::string getTarget(void) const;
+		void execute(Bureaucrat const & executor) const;
 
 	private:
-		std::string const _name;
-		bool _isSigned;
-		int	const _requiredGradeToSign;
-		int const _requiredGradeToExecute;
+		std::string const _target;
+		PresidentialPardonForm	&operator= ( PresidentialPardonForm const & rhs );
 };
 #endif

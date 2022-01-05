@@ -89,6 +89,26 @@ void Bureaucrat::signForm(Form &formToSign){
 	}
 };
 
+void Bureaucrat::checkFormBeforeExecute(Form const &form)
+{
+		if (form.getIsSigned() == false) 
+			throw Form::FormNotSignedException();
+		if (this->getGrade() > form.getRequiredGradeToExecute()) 
+			throw Form::GradeTooLowException();
+}
+
+void Bureaucrat::executeForm(Form const & form){
+
+	try {
+		checkFormBeforeExecute(form);
+		form.execute(*this);
+		std::cout << this->getName() << " successfully executed form " << form.getName() << "\n";
+
+	} catch (std::exception &e) {
+		std::cerr << "Exception: " << e.what() << '\n';
+	}
+};
+
 std::ostream	&operator<< ( std::ostream & out, const Bureaucrat & rhs ){
 
 	out << rhs.getName() << ", bureaucrat grade ";

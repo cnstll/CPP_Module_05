@@ -47,8 +47,7 @@ Form &Form::beSigned(Bureaucrat const &bureaucrat){
 	return *this;
 };
 
-void Form::checkBeforeExecute(Bureaucrat const & executor)
-{
+void Form::checkBeforeExecute(Bureaucrat const & executor) const {
 		if (this->getIsSigned() == false) 
 			throw Form::FormNotSignedException();
 		if (executor.getGrade() > this->getRequiredGradeToExecute()) 

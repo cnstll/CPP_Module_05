@@ -25,19 +25,18 @@ std::string ShrubberyCreationForm::getTarget(void) const {
 	return _target;
 };
 
-void ShrubberyCreationForm::printTreesToFile(std::ofstream &outf)
-{
+void ShrubberyCreationForm::printTreesToFile(std::ofstream &outf) const {
 	int numberOfTrees = 3;
 	const char *tree = 
-	"		   	   _-_			"
-	"		    /~~   ~~\\		"
-	"		 /~~         ~~\\	"
-	"		{               }	"
-	"		 \\  _-     -_  /	"
-	"		   ~  \\ //  ~		"
-	"		_- -   | | _- _		"
-	"		  _ -  | |   -_		"
-	"		      // \\          ";
+	"		   	   _-_			\n"
+	"		    /~~   ~~\\		\n"
+	"		 /~~         ~~\\	\n"
+	"		{               }	\n"
+	"		 \\  _-     -_  /	\n"
+	"		   ~  \\ //  ~		\n"
+	"		_- -   | | _- _		\n"
+	"		  _ -  | |   -_		\n"
+	"		      // \\         \n";
 
 	for (int i = 0; i < numberOfTrees; i++)	
 	{
@@ -45,7 +44,7 @@ void ShrubberyCreationForm::printTreesToFile(std::ofstream &outf)
 	}
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor){
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
 
 	try {
 		checkBeforeExecute(executor);

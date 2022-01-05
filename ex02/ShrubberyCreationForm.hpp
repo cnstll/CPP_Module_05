@@ -2,8 +2,6 @@
 #define SHRUBBERYCREATIONFORM_HPP
 #include "Form.hpp"
 
-class Form;
-
 class ShrubberyCreationForm : public Form {
 
 	public:
@@ -12,8 +10,8 @@ class ShrubberyCreationForm : public Form {
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		virtual ~ShrubberyCreationForm(void);
 		std::string getTarget(void) const;
-		void printTreesToFile(std::ofstream &outf);
-		void execute(Bureaucrat const & executor);
+		void printTreesToFile(std::ofstream &outf) const;
+		void execute(Bureaucrat const & executor) const;
 
 	private:
 		std::string const _target;
