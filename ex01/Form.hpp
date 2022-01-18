@@ -40,5 +40,6 @@ class Form {
 		int const _requiredGradeToExecute;
 		Form	&operator= ( Form const & rhs );
 };
+
 std::ostream &operator<<(std::ostream &out, const Form &rhs);
 #endif
