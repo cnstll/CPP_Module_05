@@ -46,7 +46,8 @@ void Bureaucrat::promote( void ){
 
 	try {
 		std::cout << "Promoting ";
-		std::cout << getName() << "...\n";
+		std::cout << getName();
+		std::cout << " with grade " << getGrade() << "...\n";
 		int currentGrade = getGrade();
 		if (currentGrade <= 1)
 			throw Bureaucrat::GradeTooHighException(); 
@@ -59,7 +60,8 @@ void Bureaucrat::demote( void ){
 
 	try {
 		std::cout << "Demoting ";
-		std::cout << getName() << "...\n";
+		std::cout << getName();
+		std::cout << " with grade " << getGrade() << "...\n";
 		int currentGrade = getGrade();
 		if (currentGrade >= 150)
 			throw Bureaucrat::GradeTooLowException(); 
