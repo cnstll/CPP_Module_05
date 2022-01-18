@@ -64,4 +64,3 @@ Intern	&Intern::operator= ( Intern const & rhs ){
 	(void)rhs;
 	return *this;
 };
-

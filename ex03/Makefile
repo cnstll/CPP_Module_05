@@ -12,7 +12,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 CXX=clang++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 .PHONY: all clean fclean re
 

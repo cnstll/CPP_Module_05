@@ -9,9 +9,9 @@ Form::Form(std::string const  name, int const RequiredGradeToSign, int const Req
 {
 	std::cout << "Form - Default constructor called\n";
 	if (RequiredGradeToSign > 150 || RequiredGradeToExecute > 150)
-		throw Form::GradeTooHighException(); 
-	if (RequiredGradeToSign < 1 || RequiredGradeToExecute < 1)
 		throw Form::GradeTooLowException(); 
+	if (RequiredGradeToSign < 1 || RequiredGradeToExecute < 1)
+		throw Form::GradeTooHighException(); 
 	return ;
 };
 

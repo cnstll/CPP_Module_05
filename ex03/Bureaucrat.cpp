@@ -7,9 +7,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) :
 
 	std::cout << "Bureaucrat - Default constructor called\n";
 	if (grade > 150)
-		throw Bureaucrat::GradeTooHighException(); 
-	if (grade < 1)
 		throw Bureaucrat::GradeTooLowException(); 
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException(); 
 	_grade = grade;
 	return ;
 };
@@ -29,7 +29,7 @@ Bureaucrat::~Bureaucrat( void ){
 
 Bureaucrat	&Bureaucrat::operator= ( Bureaucrat const & rhs ){
 
-	this->_grade = rhs.getGrade();
+	(void)rhs;
 	return *this;
 };
 
@@ -49,7 +49,7 @@ void Bureaucrat::promote( void ){
 		std::cout << "Promoting ";
 		std::cout << getName() << "...\n";
 		int currentGrade = getGrade();
-		if (currentGrade <= 1 || currentGrade >= 150)
+		if (currentGrade <= 1)
 			throw Bureaucrat::GradeTooHighException(); 
 		this->_grade = _grade - 1;
 	} catch (std::exception &e) {
@@ -115,4 +115,3 @@ std::ostream	&operator<< ( std::ostream & out, const Bureaucrat & rhs ){
 	out << rhs.getGrade() << std::endl;
 	return out;
 };
-

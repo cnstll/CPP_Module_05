@@ -3,7 +3,7 @@
 #include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm( std::string const target ) :
-Form("robotomy request", 72, 45), _target(target)
+Form("Robotomy Request", 72, 45), _target(target)
 {
 
 	std::cout << "RobotomyRequestForm - Default constructor called\n";
@@ -25,10 +25,15 @@ std::string RobotomyRequestForm::getTarget(void) const {
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 
+	static bool done = false;
+
 	try {
 		checkBeforeExecute(executor);
-  		srand(time(NULL));
-		bool coinFlip = rand() % 2;
+		if (done == false){
+  			std::srand(time(NULL));
+			done = true;
+		}
+		bool coinFlip = std::rand() % 2;
 		std::cout << "** drilling noise **\n";
 		if (coinFlip == false)
 			std::cout << this->getTarget() << " was successfully robotomized.\n";
