@@ -184,6 +184,9 @@ int main(void)
             std::cerr << "Exception: " << e.what() << std::endl;
         }
         printSectionTitle("Cleaning");
+		delete formR32;
+		delete formS32;
+		delete formP32;
     }
     return 0;
 }
